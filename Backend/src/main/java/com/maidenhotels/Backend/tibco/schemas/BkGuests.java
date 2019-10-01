@@ -43,8 +43,8 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "Guest", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Guests.xsd")
-public class Guest {
+@XmlRootElement(name = "BkGuests")
+public class BkGuests {
 
     @XmlAttribute(name = "address")
     protected String address;
@@ -67,7 +67,7 @@ public class Guest {
     @XmlAttribute(name = "status")
     protected String status;
 
-    public Guest(String address, String contactNumber, String dateOfBirth, String email, String firstName, String gender, String id, String idNumber, String lastName, String status) {
+    public BkGuests(String address, String contactNumber, String dateOfBirth, String email, String firstName, String gender, String id, String idNumber, String lastName, String status) {
         this.address = address;
         this.contactNumber = contactNumber;
         this.dateOfBirth = dateOfBirth;
@@ -80,7 +80,7 @@ public class Guest {
         this.status = status;
     }
 
-    public Guest() {
+    public BkGuests() {
     }
 
     /**

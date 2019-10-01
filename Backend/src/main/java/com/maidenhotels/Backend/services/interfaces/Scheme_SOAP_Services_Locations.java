@@ -14,15 +14,10 @@ public class Scheme_SOAP_Services_Locations {
     public static final String SERVICE_PORT = "10101";
     public static final String CLIENT_PORT = "10106";
     public static final String GUEST_PORT = "10105";
+    public static final String ROOMSHOTEL_PORT = "10104";
+    public static final String SERVICESHOTEL_PORT = "10102";
+    public static final String BOOKING_PORT = "10107";
 
-    /*public static final String FLIGHT_PORT = "9084";
-    public static final String CLIENT_PORT = "9083";
-    public static final String CLIENT_TYPE_PORT = "9088";
-    public static final String BACKOFFICE_PORT = "9082";
-    public static final String ROLE_PORT = "9085";
-    public static final String BOOKING_PORT = "9087";
-    public static final String BOOKING_TYPE_PORT = "9086";*/
-    //--END: PORTS--
 
     //-- SERVICE SPECIFICATIONS--
     public static final String HOTEL_SERVICE_SPECIFICATION = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Hotels.serviceagent/PortType_Hotels";
@@ -30,7 +25,9 @@ public class Scheme_SOAP_Services_Locations {
     public static final String SERVICE_SERVICE_SPECIFICATION = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Services.serviceagent/PortType_Services";
     public static final String CLIENT_SERVICE_SPECIFICATION = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Clients.serviceagent/PortType_Clients";
     public static final String GUEST_SERVICE_SPECIFICATION = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Guests.serviceagent/PortType_Guests";
-
+    public static final String ROOMSHOTEL_SERVICE_SPECIFICATION = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Rooms_hotel.serviceagent/PortType_RoomsHotels";
+    public static final String SERVICESHOTEL_SERVICE_SPECIFICATION = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Services_hotel.serviceagent/PortType_ServiceHotel";
+    public static final String BOOKING_SERVICE_SPECIFICATION = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent/PortTyp_Bookings";
 
     //--END: SERVICE SPECIFICATIONS--
 
@@ -52,6 +49,14 @@ public class Scheme_SOAP_Services_Locations {
     public static final String ROOM_SOAP_ACTION_READ_BY_PARAM = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Rooms.serviceagent/PortType_Room/Get_ByParam";
     //--END: ROOM - SOAP ACTIONS--
 
+    //-- ROOMSHOTEL - SOAP ACTIONS--
+    public static final String ROOMSHOTEL_SOAP_ACTION_CREATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Rooms_hotel.serviceagent/PortType_RoomsHotels/Insert";
+    public static final String ROOMSHOTEL_SOAP_ACTION_UPDATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Rooms_hotel.serviceagent/PortType_RoomsHotels/Update";
+    public static final String ROOMSHOTEL_SOAP_ACTION_DELETE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Rooms_hotel.serviceagent/PortType_RoomsHotels/Delete";
+    public static final String ROOMSHOTEL_SOAP_ACTION_READ_ALL = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Rooms_hotel.serviceagent/PortType_RoomsHotels/Get_All";
+    public static final String ROOMSHOTEL_SOAP_ACTION_READ_BY_PARAM = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Rooms_hotel.serviceagent/PortType_RoomsHotels/Get_ByParam";
+    //--END: ROOMSHOTEL - SOAP ACTIONS--
+
     //-- SERVICE - SOAP ACTIONS--
     public static final String SERVICE_SOAP_ACTION_CREATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Services.serviceagent/PortType_ServicesEndpoint1/Insert";
     public static final String SERVICE_SOAP_ACTION_UPDATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Services.serviceagent/PortType_ServicesEndpoint1/Update";
@@ -59,6 +64,14 @@ public class Scheme_SOAP_Services_Locations {
     public static final String SERVICE_SOAP_ACTION_READ_ALL = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Services.serviceagent/PortType_ServicesEndpoint1/Get_All";
     public static final String SERVICE_SOAP_ACTION_READ_BY_PARAM = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Services.serviceagent/PortType_ServicesEndpoint1/Get_ByParam";
     //--END: SERVICE - SOAP ACTIONS--
+
+    //-- SERVICESHOTEL - SOAP ACTIONS--
+    public static final String SERVICESHOTEL_SOAP_ACTION_CREATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Services_hotel.serviceagent/PortType_ServiceHotelEndpoint1/Insert";
+    public static final String SERVICESHOTEL_SOAP_ACTION_UPDATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Services_hotel.serviceagent/PortType_ServiceHotelEndpoint1/Update";
+    public static final String SERVICESHOTEL_SOAP_ACTION_DELETE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Services_hotel.serviceagent/PortType_ServiceHotelEndpoint1/Delete";
+    public static final String SERVICESHOTEL_SOAP_ACTION_READ_ALL = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Services_hotel.serviceagent/PortType_ServiceHotelEndpoint1/Get_All";
+    public static final String SERVICESHOTEL_SOAP_ACTION_READ_BY_PARAM = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Services_hotel.serviceagent/PortType_ServiceHotelEndpoint1/Get_ByParam";
+    //--END: SERVICESHOTEL - SOAP ACTIONS--
 
     //-- CLIENT - SOAP ACTIONS--
     public static final String CLIENT_SOAP_ACTION_CREATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Clients.serviceagent/PortType_Clients/Insert";
@@ -77,6 +90,15 @@ public class Scheme_SOAP_Services_Locations {
     public static final String GUEST_SOAP_ACTION_READ_BY_ID = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Guests.serviceagent/PortType_Guests/Get_ByParam";
     public static final String GUEST_SOAP_ACTION_READ_BY_PARAM = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Guests.serviceagent/PortType_Guests/Get_ByParam";
     //--END: CLIENT - SOAP ACTIONS--
+
+    //-- BOOKING - SOAP ACTIONS--
+    public static final String BOOKING_SOAP_ACTION_CREATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent/Insert";
+    public static final String BOOKING_SOAP_ACTION_UPDATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent/Update";
+    public static final String BOOKING_SOAP_ACTION_DELETE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent/Delete";
+    public static final String BOOKING_SOAP_ACTION_READ_ALL = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent/Get_All";
+    public static final String BOOKING_SOAP_ACTION_READ_BY_ROOM = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent/Get_ByRoom";
+    public static final String BOOKING_SOAP_ACTION_READ_BY_ID = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//Get_ByID";
+    //--END: BOOKING - SOAP ACTIONS--
 
 
 

@@ -24,9 +24,11 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="cost" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="id_hotel" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="id_service" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="id_rooms" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="room_number" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -36,23 +38,53 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "ServiceHotel", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/ServiceHotel.xsd")
-public class ServiceHotel {
+@XmlRootElement(name = "Bkrooms_hotel")
+public class BkroomsHotel {
 
+    @XmlAttribute(name = "cost")
+    protected String cost;
     @XmlAttribute(name = "id")
     protected String id;
     @XmlAttribute(name = "id_hotel")
     protected String idHotel;
-    @XmlAttribute(name = "id_service")
-    protected String idService;
+    @XmlAttribute(name = "id_rooms")
+    protected String idRooms;
+    @XmlAttribute(name = "room_number")
+    protected String roomNumber;
 
-    public ServiceHotel(String id, String idHotel, String idService) {
+    public BkroomsHotel(String cost, String id, String idHotel, String idRooms, String roomNumber) {
+        this.cost = cost;
         this.id = id;
         this.idHotel = idHotel;
-        this.idService = idService;
+        this.idRooms = idRooms;
+        this.roomNumber = roomNumber;
     }
 
-    public ServiceHotel() {
+    public BkroomsHotel() {
+    }
+
+    /**
+     * Gets the value of the cost property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCost() {
+        return cost;
+    }
+
+    /**
+     * Sets the value of the cost property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCost(String value) {
+        this.cost = value;
     }
 
     /**
@@ -104,27 +136,51 @@ public class ServiceHotel {
     }
 
     /**
-     * Gets the value of the idService property.
+     * Gets the value of the idRooms property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getIdService() {
-        return idService;
+    public String getIdRooms() {
+        return idRooms;
     }
 
     /**
-     * Sets the value of the idService property.
+     * Sets the value of the idRooms property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setIdService(String value) {
-        this.idService = value;
+    public void setIdRooms(String value) {
+        this.idRooms = value;
+    }
+
+    /**
+     * Gets the value of the roomNumber property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRoomNumber() {
+        return roomNumber;
+    }
+
+    /**
+     * Sets the value of the roomNumber property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRoomNumber(String value) {
+        this.roomNumber = value;
     }
 
 }

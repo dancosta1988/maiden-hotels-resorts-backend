@@ -43,6 +43,23 @@ public class RequestCreator {
         return request;
     }
 
+    // ---- ---- ROOMSHOTEL ---- ---- //
+    public RoomsHotels createRoomsHotel(String cost, String id, String idHotel, String idRooms, String roomNumber) {
+
+        RoomsHotel roomsHotel = new RoomsHotel(cost, id, idHotel, idRooms, roomNumber);
+        RoomsHotels request = new RoomsHotels();
+        request.getRoomsHotel().add(roomsHotel);
+        return request;
+    }
+    public RoomsHotels createRoomsHotelID(String id) {
+
+        RoomsHotel roomsHotel = new RoomsHotel();
+        roomsHotel.setId(id);
+        RoomsHotels request = new RoomsHotels();
+        request.getRoomsHotel().add(roomsHotel);
+        return request;
+    }
+
     // ---- ---- SERVICES ---- ---- //
     public Services createServices(String id, String name) {
 
@@ -60,8 +77,25 @@ public class RequestCreator {
         return request;
     }
 
+    // ---- ---- SERVICESHOTEL ---- ---- //
+    public ServicesHotels createServicesHotel(String id, String idHotel, String idService) {
+
+        ServiceHotel serviceHotel = new ServiceHotel(id, idHotel, idService);
+        ServicesHotels request = new ServicesHotels();
+        request.getServiceHotel().add(serviceHotel);
+        return request;
+    }
+    public ServicesHotels createServicesHotelID(String id) {
+
+        ServiceHotel serviceHotel = new ServiceHotel();
+        serviceHotel.setId(id);
+        ServicesHotels request = new ServicesHotels();
+        request.getServiceHotel().add(serviceHotel);
+        return request;
+    }
+
     // ---- ---- CLIENTS ---- ---- //
-    public Clients createClients(List<Guest> guestClient, String id, String idGuest, String moneySpent, String password) {
+    public Clients createClients(List<GuestClient> guestClient, String id, String idGuest, String moneySpent, String password) {
 
         Client client = new Client(guestClient,  id,  idGuest, moneySpent, password);
         Clients request = new Clients();

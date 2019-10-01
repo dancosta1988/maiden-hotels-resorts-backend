@@ -34,8 +34,8 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "SuccessRoom", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Room.xsd")
-public class SuccessRoom {
+@XmlRootElement(name = "SuccessBooking")
+public class SuccessBooking {
 
     @XmlAttribute(name = "value")
     protected String value;

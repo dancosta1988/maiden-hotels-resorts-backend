@@ -52,9 +52,9 @@
             <wsdl:input message="tns:in_Update"/>
             <wsdl:output message="tns:out_Update"/>
         </wsdl:operation>
-        <wsdl:operation name="Get_ByID">
-            <wsdl:input message="tns:in_Get_ByID"/>
-            <wsdl:output message="tns:out_Get_ByID"/>
+        <wsdl:operation name="Get_ByParam">
+            <wsdl:input message="tns:in_Get_ByParam"/>
+            <wsdl:output message="tns:out_Get_ByParam"/>
         </wsdl:operation>
     </wsdl:portType>
     <wsdl:binding name="PortType_ServicesBinding" type="tns:PortType_Services">
@@ -95,8 +95,8 @@
                 <soap:body use="literal" parts="Status"/>
             </wsdl:output>
         </wsdl:operation>
-        <wsdl:operation name="Get_ByID">
-            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Services.serviceagent/PortType_ServicesEndpoint1/Get_ByID"/>
+        <wsdl:operation name="Get_ByParam">
+            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Services.serviceagent//Get_ByParam"/>
             <wsdl:input>
                 <soap:body use="literal" parts="Services"/>
             </wsdl:input>
@@ -127,10 +127,10 @@
     <wsdl:message name="out_Update">
         <wsdl:part name="Status" element="ns0:StatusService"/>
     </wsdl:message>
-    <wsdl:message name="in_Get_ByID">
+    <wsdl:message name="in_Get_ByParam">
         <wsdl:part name="Services" element="ns0:Services"/>
     </wsdl:message>
-    <wsdl:message name="out_Get_ByID">
+    <wsdl:message name="out_Get_ByParam">
         <wsdl:part name="Services" element="ns0:Services"/>
     </wsdl:message>
 </wsdl:definitions>

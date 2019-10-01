@@ -55,13 +55,9 @@
             <wsdl:input message="tns:in_Update"/>
             <wsdl:output message="tns:out_Update"/>
         </wsdl:operation>
-        <wsdl:operation name="Get_ByID">
-            <wsdl:input message="tns:in_Get_ByID"/>
-            <wsdl:output message="tns:out_Get_ByID"/>
-        </wsdl:operation>
-        <wsdl:operation name="Get_ByName">
-            <wsdl:input message="tns:in_Get_ByName"/>
-            <wsdl:output message="tns:out_Get_ByName"/>
+        <wsdl:operation name="Get_ByParam">
+            <wsdl:input message="tns:in_Get_ByParam"/>
+            <wsdl:output message="tns:out_Get_ByParam"/>
         </wsdl:operation>
     </wsdl:portType>
     <wsdl:binding name="PortType_HotelsBinding" type="tns:PortType_Hotels">
@@ -102,17 +98,8 @@
                 <soap:body use="literal" parts="Status"/>
             </wsdl:output>
         </wsdl:operation>
-        <wsdl:operation name="Get_ByID">
-            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Hotels.serviceagent/PortType_Hotels/Get_ByID"/>
-            <wsdl:input>
-                <soap:body use="literal" parts="Hotels"/>
-            </wsdl:input>
-            <wsdl:output>
-                <soap:body use="literal" parts="Hotels"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="Get_ByName">
-            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Hotels.serviceagent//Get_ByName"/>
+        <wsdl:operation name="Get_ByParam">
+            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Hotels.serviceagent//Get_ByParam"/>
             <wsdl:input>
                 <soap:body use="literal" parts="Hotels"/>
             </wsdl:input>
@@ -143,16 +130,10 @@
     <wsdl:message name="out_Update">
         <wsdl:part name="Status" element="ns0:StatusHotel"/>
     </wsdl:message>
-    <wsdl:message name="in_Get_ByID">
+    <wsdl:message name="in_Get_ByParam">
         <wsdl:part name="Hotels" element="ns0:Hotels"/>
     </wsdl:message>
-    <wsdl:message name="out_Get_ByID">
-        <wsdl:part name="Hotels" element="ns0:Hotels"/>
-    </wsdl:message>
-    <wsdl:message name="in_Get_ByName">
-        <wsdl:part name="Hotels" element="ns0:Hotels"/>
-    </wsdl:message>
-    <wsdl:message name="out_Get_ByName">
+    <wsdl:message name="out_Get_ByParam">
         <wsdl:part name="Hotels" element="ns0:Hotels"/>
     </wsdl:message>
 </wsdl:definitions>

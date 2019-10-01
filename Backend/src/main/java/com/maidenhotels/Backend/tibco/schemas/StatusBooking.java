@@ -10,7 +10,7 @@ package com.maidenhotels.Backend.tibco.schemas;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,7 +24,9 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element ref="{http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Bookings.xsd}SuccessBooking" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -33,35 +35,37 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "SuccessRoom", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Room.xsd")
-public class SuccessRoom {
+@XmlType(name = "", propOrder = {
+    "successBooking"
+})
+@XmlRootElement(name = "StatusBooking")
+public class StatusBooking {
 
-    @XmlAttribute(name = "value")
-    protected String value;
+    @XmlElement(name = "SuccessBooking")
+    protected SuccessBooking successBooking;
 
     /**
-     * Gets the value of the value property.
+     * Gets the value of the successBooking property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link SuccessBooking }
      *     
      */
-    public String getValue() {
-        return value;
+    public SuccessBooking getSuccessBooking() {
+        return successBooking;
     }
 
     /**
-     * Sets the value of the value property.
+     * Sets the value of the successBooking property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link SuccessBooking }
      *     
      */
-    public void setValue(String value) {
-        this.value = value;
+    public void setSuccessBooking(SuccessBooking value) {
+        this.successBooking = value;
     }
 
 }

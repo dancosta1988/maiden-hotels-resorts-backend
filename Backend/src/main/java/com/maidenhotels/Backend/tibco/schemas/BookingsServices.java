@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element ref="{http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Guests.xsd}Guest" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element ref="{http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Bookings.xsd}BookingsService" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,41 +38,41 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "guest"
+    "bookingsService"
 })
-@XmlRootElement(name = "Guests", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Guests.xsd")
-public class Guests {
+@XmlRootElement(name = "BookingsServices")
+public class BookingsServices {
 
-    @XmlElement(name = "Guest", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Guests.xsd")
-    protected List<Guest> guest;
+    @XmlElement(name = "BookingsService")
+    protected List<BookingsService> bookingsService;
 
     /**
-     * Gets the value of the guest property.
+     * Gets the value of the bookingsService property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the guest property.
+     * This is why there is not a <CODE>set</CODE> method for the bookingsService property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getGuest().add(newItem);
+     *    getBookingsService().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Guest }
+     * {@link BookingsService }
      * 
      * 
      */
-    public List<Guest> getGuest() {
-        if (guest == null) {
-            guest = new ArrayList<Guest>();
+    public List<BookingsService> getBookingsService() {
+        if (bookingsService == null) {
+            bookingsService = new ArrayList<BookingsService>();
         }
-        return this.guest;
+        return this.bookingsService;
     }
 
 }

@@ -24,9 +24,10 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="cost" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="id_hotel" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="id_service" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="id_booking" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="id_service_hotel" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -36,23 +37,50 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "ServiceHotel", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/ServiceHotel.xsd")
-public class ServiceHotel {
+@XmlRootElement(name = "BookingsService")
+public class BookingsService {
 
+    @XmlAttribute(name = "cost")
+    protected String cost;
     @XmlAttribute(name = "id")
     protected String id;
-    @XmlAttribute(name = "id_hotel")
-    protected String idHotel;
-    @XmlAttribute(name = "id_service")
-    protected String idService;
+    @XmlAttribute(name = "id_booking")
+    protected String idBooking;
+    @XmlAttribute(name = "id_service_hotel")
+    protected String idServiceHotel;
 
-    public ServiceHotel(String id, String idHotel, String idService) {
+    public BookingsService(String cost, String id, String idBooking, String idServiceHotel) {
+        this.cost = cost;
         this.id = id;
-        this.idHotel = idHotel;
-        this.idService = idService;
+        this.idBooking = idBooking;
+        this.idServiceHotel = idServiceHotel;
     }
 
-    public ServiceHotel() {
+    public BookingsService() {
+    }
+
+    /**
+     * Gets the value of the cost property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCost() {
+        return cost;
+    }
+
+    /**
+     * Sets the value of the cost property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCost(String value) {
+        this.cost = value;
     }
 
     /**
@@ -80,51 +108,51 @@ public class ServiceHotel {
     }
 
     /**
-     * Gets the value of the idHotel property.
+     * Gets the value of the idBooking property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getIdHotel() {
-        return idHotel;
+    public String getIdBooking() {
+        return idBooking;
     }
 
     /**
-     * Sets the value of the idHotel property.
+     * Sets the value of the idBooking property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setIdHotel(String value) {
-        this.idHotel = value;
+    public void setIdBooking(String value) {
+        this.idBooking = value;
     }
 
     /**
-     * Gets the value of the idService property.
+     * Gets the value of the idServiceHotel property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getIdService() {
-        return idService;
+    public String getIdServiceHotel() {
+        return idServiceHotel;
     }
 
     /**
-     * Sets the value of the idService property.
+     * Sets the value of the idServiceHotel property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setIdService(String value) {
-        this.idService = value;
+    public void setIdServiceHotel(String value) {
+        this.idServiceHotel = value;
     }
 
 }

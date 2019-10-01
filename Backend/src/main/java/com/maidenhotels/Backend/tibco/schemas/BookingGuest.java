@@ -25,7 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="id_booking" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="id_guest" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -35,20 +36,23 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "Service", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Services.xsd")
-public class Service {
+@XmlRootElement(name = "BookingGuest")
+public class BookingGuest {
 
     @XmlAttribute(name = "id")
     protected String id;
-    @XmlAttribute(name = "name")
-    protected String name;
+    @XmlAttribute(name = "id_booking")
+    protected String idBooking;
+    @XmlAttribute(name = "id_guest")
+    protected String idGuest;
 
-    public Service(String id, String name) {
+    public BookingGuest(String id, String idBooking, String idGuest) {
         this.id = id;
-        this.name = name;
+        this.idBooking = idBooking;
+        this.idGuest = idGuest;
     }
 
-    public Service() {
+    public BookingGuest() {
     }
 
     /**
@@ -76,27 +80,51 @@ public class Service {
     }
 
     /**
-     * Gets the value of the name property.
+     * Gets the value of the idBooking property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getName() {
-        return name;
+    public String getIdBooking() {
+        return idBooking;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the idBooking property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setIdBooking(String value) {
+        this.idBooking = value;
+    }
+
+    /**
+     * Gets the value of the idGuest property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getIdGuest() {
+        return idGuest;
+    }
+
+    /**
+     * Sets the value of the idGuest property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setIdGuest(String value) {
+        this.idGuest = value;
     }
 
 }
