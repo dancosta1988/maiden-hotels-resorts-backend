@@ -128,4 +128,21 @@ public class RequestCreator {
         return request;
     }
 
+    // ---- ---- BOOKINGS ---- ---- //
+    public Bookings createBookings(List<BkGuests> bkGuests, List<BkServices> bkServices, List<BkroomsHotel> bkroomsHotel, String checkInDate, String checkOutDate, String date, String id, String status) {
+
+        Booking guest = new Booking(bkGuests, bkServices, bkroomsHotel, checkInDate, checkOutDate, date, id, status);
+        Bookings request = new Bookings();
+        request.getBooking().add(guest);
+        return request;
+    }
+    public Bookings createBookingsID(String id) {
+
+        Booking guest = new Booking();
+        guest.setId(id);
+        Bookings request = new Bookings();
+        request.getBooking().add(guest);
+        return request;
+    }
+
 }
