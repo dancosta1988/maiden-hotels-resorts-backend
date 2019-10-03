@@ -27,7 +27,7 @@ public class RoomsHotel_Controller {
         return rooms.getAll();
     }
 
-    @PostMapping("RoomsHotelByID")
+    @PostMapping("RoomsHotelByParam")
     public List<RoomsHotel> getRoomsHotel(@RequestBody RoomsHotel request ) {
 
         RoomsHotels roomsReq = new RoomsHotels();
