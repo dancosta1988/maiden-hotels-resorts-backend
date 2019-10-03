@@ -78,9 +78,9 @@ public class RequestCreator {
     }
 
     // ---- ---- SERVICESHOTEL ---- ---- //
-    public ServicesHotels createServicesHotel(String id, String idHotel, String idService) {
+    public ServicesHotels createServicesHotel(String id, String idHotel, String idService, String status) {
 
-        ServiceHotel serviceHotel = new ServiceHotel(id, idHotel, idService);
+        ServiceHotel serviceHotel = new ServiceHotel(id, idHotel, idService, status);
         ServicesHotels request = new ServicesHotels();
         request.getServiceHotel().add(serviceHotel);
         return request;

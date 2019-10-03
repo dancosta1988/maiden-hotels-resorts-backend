@@ -45,11 +45,14 @@ public class ServiceHotel {
     protected String idHotel;
     @XmlAttribute(name = "id_service")
     protected String idService;
+    @XmlAttribute(name = "status")
+    protected String status;
 
-    public ServiceHotel(String id, String idHotel, String idService) {
+    public ServiceHotel(String id, String idHotel, String idService, String status) {
         this.id = id;
         this.idHotel = idHotel;
         this.idService = idService;
+        this.status = status;
     }
 
     public ServiceHotel() {
@@ -127,4 +130,11 @@ public class ServiceHotel {
         this.idService = value;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }
