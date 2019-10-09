@@ -66,4 +66,36 @@ public class Booking_Controller {
         bookingReq.getBooking().add(request);
         return booking.update(bookingReq);
     }
+
+    @PostMapping("BookingUpdateServices")
+    public String UpdateBookingServices(@RequestBody Booking request ) {
+
+        Bookings bookingReq = new Bookings();
+        bookingReq.getBooking().add(request);
+        return booking.updateServices(bookingReq);
+    }
+
+    @PostMapping("BookingUpdateGuests")
+    public String UpdateBookingGuests(@RequestBody Booking request ) {
+
+        Bookings bookingReq = new Bookings();
+        bookingReq.getBooking().add(request);
+        return booking.updateGuests(bookingReq);
+    }
+
+    @PostMapping("BookingUpdateRooms")
+    public String UpdateBookingRooms(@RequestBody Booking request ) {
+
+        Bookings bookingReq = new Bookings();
+        bookingReq.getBooking().add(request);
+        return booking.updateRooms(bookingReq);
+    }
+
+    @PostMapping("BookingInsertServices")
+    public String InsertBookingServices(@RequestBody Booking request ) {
+
+        Bookings bookingReq = new Bookings();
+        bookingReq.getBooking().add(request);
+        return booking.insertServices(bookingReq);
+    }
 }

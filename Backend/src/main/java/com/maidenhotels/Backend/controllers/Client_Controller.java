@@ -33,7 +33,7 @@ public class Client_Controller {
 
         Clients clientsReq = new Clients();
         clientsReq.getClient().add(request);
-        return clients.getByID(clientsReq);
+        return clients.getByParam(clientsReq);
     }
 
     @PostMapping("ClientCreate")

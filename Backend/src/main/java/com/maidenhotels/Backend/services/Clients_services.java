@@ -34,9 +34,6 @@ public class Clients_services implements Services_Interface<Clients, Client> {
         return dataOutput.getClient();
     }
 
-    public List<Client> getByID(Clients request) {
-        return null;
-    }
 
     @Override
     public String create(Clients request) {

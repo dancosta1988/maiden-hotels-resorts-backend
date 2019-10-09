@@ -10,9 +10,9 @@ import java.util.List;
 @Component
 public class RequestCreator {
     // ---- ---- HOTELS ---- ---- //
-    public Hotels createHotels(String classification, String id, String location, String name, String type) {
+    public Hotels createHotels(String classification, String id, String imagePath, String location, String name, String type) {
 
-        Hotel hotel = new Hotel(classification, id, location, name, type);
+        Hotel hotel = new Hotel(classification, id, imagePath, location, name, type);
         Hotels request = new Hotels();
         request.getHotel().add(hotel);
         return request;
@@ -51,10 +51,10 @@ public class RequestCreator {
         request.getRoomsHotel().add(roomsHotel);
         return request;
     }
-    public RoomsHotels createRoomsHotelID(String id) {
+    public RoomsHotels createRoomsHotelID(String idHotel) {
 
         RoomsHotel roomsHotel = new RoomsHotel();
-        roomsHotel.setId(id);
+        roomsHotel.setIdHotel(idHotel);
         RoomsHotels request = new RoomsHotels();
         request.getRoomsHotel().add(roomsHotel);
         return request;
@@ -85,10 +85,10 @@ public class RequestCreator {
         request.getServiceHotel().add(serviceHotel);
         return request;
     }
-    public ServicesHotels createServicesHotelID(String id) {
+    public ServicesHotels createServicesHotelID(String idHotel) {
 
         ServiceHotel serviceHotel = new ServiceHotel();
-        serviceHotel.setId(id);
+        serviceHotel.setIdHotel(idHotel);
         ServicesHotels request = new ServicesHotels();
         request.getServiceHotel().add(serviceHotel);
         return request;
@@ -145,4 +145,39 @@ public class RequestCreator {
         return request;
     }
 
+    // ---- ---- ROLES ---- ---- //
+    public Roles createRoles(String id, String name) {
+
+        Role role = new Role(id, name);
+       Roles request = new Roles();
+        request.getRole().add(role);
+        return request;
+    }
+
+    public Roles createRolesID(String id) {
+
+        Role role = new Role();
+        role.setId(id);
+        Roles request = new Roles();
+        request.getRole().add(role);
+        return request;
+    }
+
+    // ---- ---- BACKOFFICES ---- ---- //
+    public Backoffices createBackoffices(String id, String idRole, String name, String password, String username) {
+
+        Backoffice backoffice = new Backoffice(id, idRole, name, password, username);
+        Backoffices request = new Backoffices();
+        request.getBackoffice().add(backoffice);
+        return request;
+    }
+
+    public Backoffices createBackofficesID(String id) {
+
+        Backoffice backoffice = new Backoffice();
+        backoffice.setId(id);
+        Backoffices request = new Backoffices();
+        request.getBackoffice().add(backoffice);
+        return request;
+    }
 }

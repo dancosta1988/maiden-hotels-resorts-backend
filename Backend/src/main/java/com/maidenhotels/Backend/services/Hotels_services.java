@@ -33,16 +33,11 @@ public class Hotels_services implements Services_Interface<Hotels, Hotel> {
     }
 
     @Override
-    public Collection<Hotel> getByParam(Hotels object) {
-        return null;
-    }
-
-
-    public List<Hotel> getByID(Hotels request) {
-
-        Hotels dataOutput = operations.getResult(uri,Scheme_SOAP_Services_Locations.HOTEL_SOAP_ACTION_READ_BY_ID,request);
+    public List<Hotel> getByParam(Hotels request) {
+        Hotels dataOutput = operations.getResult(uri,Scheme_SOAP_Services_Locations.HOTEL_SOAP_ACTION_READ_BY_PARAM,request);
         return dataOutput.getHotel();
     }
+
 
     @Override
     public String create(Hotels request) {

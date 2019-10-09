@@ -28,12 +28,12 @@ public class Hotel_Controller {
         return hotels.getAll();
     }
 
-    @PostMapping("HotelByID")
+    @PostMapping("HotelByParam")
     public List<Hotel> getHotel(@RequestBody Hotel request ) {
 
         Hotels hotelsReq = new Hotels();
         hotelsReq.getHotel().add(request);
-        return hotels.getByID(hotelsReq);
+        return hotels.getByParam(hotelsReq);
     }
 
     @PostMapping("HotelCreate")

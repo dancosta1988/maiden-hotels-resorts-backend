@@ -62,4 +62,30 @@ public class Bookings_services implements Services_Interface<Bookings, Booking> 
         StatusBooking dataOutput = operations.getStatus(uri, Scheme_SOAP_Services_Locations.BOOKING_SOAP_ACTION_DELETE, request);
         return dataOutput.getSuccessBooking().getValue();
     }
+
+
+    public String updateServices(Bookings request) {
+
+        StatusBooking dataOutput = operations.getStatus(uri, Scheme_SOAP_Services_Locations.BOOKING_SOAP_ACTION_UPDATE_SERVICES, request);
+        return dataOutput.getSuccessBooking().getValue();
+    }
+
+    public String updateGuests(Bookings request) {
+
+        StatusBooking dataOutput = operations.getStatus(uri, Scheme_SOAP_Services_Locations.BOOKING_SOAP_ACTION_UPDATE_GUESTS, request);
+        return dataOutput.getSuccessBooking().getValue();
+    }
+
+    public String updateRooms(Bookings request) {
+
+        StatusBooking dataOutput = operations.getStatus(uri, Scheme_SOAP_Services_Locations.BOOKING_SOAP_ACTION_UPDATE_ROOMS, request);
+        return dataOutput.getSuccessBooking().getValue();
+    }
+
+    public String insertServices(Bookings request) {
+
+        StatusBooking dataOutput = operations.getStatus(uri, Scheme_SOAP_Services_Locations.BOOKING_SOAP_ACTION_INSERT_SERVICES, request);
+        return dataOutput.getSuccessBooking().getValue();
+    }
+
 }
