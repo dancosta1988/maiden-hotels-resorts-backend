@@ -34,16 +34,16 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "SuccessRoom", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Room.xsd")
-public class SuccessRoom {
+@XmlRootElement(name = "SuccessBackoffice", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Schema.xsd2")
+public class SuccessBackoffice {
 
     @XmlAttribute(name = "value")
     protected String value;
 
-    public SuccessRoom() {
+    public SuccessBackoffice() {
     }
 
-    public SuccessRoom(String value) {
+    public SuccessBackoffice(String value) {
         this.value = value;
     }
 

@@ -10,7 +10,7 @@ package com.maidenhotels.Backend.tibco.schemas;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,7 +24,9 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element ref="{http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Schema.xsd2}SuccessBackoffice" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -33,42 +35,44 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "SuccessRoom", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Room.xsd")
-public class SuccessRoom {
+@XmlType(name = "", propOrder = {
+    "successBackoffice"
+})
+@XmlRootElement(name = "StatusBackoffice", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Schema.xsd2")
+public class StatusBackoffice {
 
-    @XmlAttribute(name = "value")
-    protected String value;
+    @XmlElement(name = "SuccessBackoffice", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Schema.xsd2")
+    protected SuccessBackoffice successBackoffice;
 
-    public SuccessRoom() {
+    public StatusBackoffice() {
     }
 
-    public SuccessRoom(String value) {
-        this.value = value;
+    public StatusBackoffice(SuccessBackoffice successBackoffice) {
+        this.successBackoffice = successBackoffice;
     }
 
     /**
-     * Gets the value of the value property.
+     * Gets the value of the successBackoffice property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link SuccessBackoffice }
      *     
      */
-    public String getValue() {
-        return value;
+    public SuccessBackoffice getSuccessBackoffice() {
+        return successBackoffice;
     }
 
     /**
-     * Sets the value of the value property.
+     * Sets the value of the successBackoffice property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link SuccessBackoffice }
      *     
      */
-    public void setValue(String value) {
-        this.value = value;
+    public void setSuccessBackoffice(SuccessBackoffice value) {
+        this.successBackoffice = value;
     }
 
 }

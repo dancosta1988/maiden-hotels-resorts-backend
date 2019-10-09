@@ -24,12 +24,11 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="classification" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="imagePath" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="location" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="idRole" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="password" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="username" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -39,56 +38,29 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "Hotel", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Hotel.xsd")
-public class Hotel {
+@XmlRootElement(name = "Backoffice", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Schema.xsd2")
+public class Backoffice {
 
-    @XmlAttribute(name = "classification")
-    protected String classification;
     @XmlAttribute(name = "id")
     protected String id;
-    @XmlAttribute(name = "imagePath")
-    protected String imagePath;
-    @XmlAttribute(name = "location")
-    protected String location;
+    @XmlAttribute(name = "idRole")
+    protected String idRole;
     @XmlAttribute(name = "name")
     protected String name;
-    @XmlAttribute(name = "type")
-    protected String type;
+    @XmlAttribute(name = "password")
+    protected String password;
+    @XmlAttribute(name = "username")
+    protected String username;
 
-    public Hotel() {
+    public Backoffice() {
     }
 
-    public Hotel(String classification, String id, String imagePath, String location, String name, String type) {
-        this.classification = classification;
+    public Backoffice(String id, String idRole, String name, String password, String username) {
         this.id = id;
-        this.imagePath = imagePath;
-        this.location = location;
+        this.idRole = idRole;
         this.name = name;
-        this.type = type;
-    }
-
-    /**
-     * Gets the value of the classification property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getClassification() {
-        return classification;
-    }
-
-    /**
-     * Sets the value of the classification property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setClassification(String value) {
-        this.classification = value;
+        this.password = password;
+        this.username = username;
     }
 
     /**
@@ -116,51 +88,27 @@ public class Hotel {
     }
 
     /**
-     * Gets the value of the imagePath property.
+     * Gets the value of the idRole property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getImagePath() {
-        return imagePath;
+    public String getIdRole() {
+        return idRole;
     }
 
     /**
-     * Sets the value of the imagePath property.
+     * Sets the value of the idRole property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setImagePath(String value) {
-        this.imagePath = value;
-    }
-
-    /**
-     * Gets the value of the location property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLocation() {
-        return location;
-    }
-
-    /**
-     * Sets the value of the location property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLocation(String value) {
-        this.location = value;
+    public void setIdRole(String value) {
+        this.idRole = value;
     }
 
     /**
@@ -188,27 +136,51 @@ public class Hotel {
     }
 
     /**
-     * Gets the value of the type property.
+     * Gets the value of the password property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getType() {
-        return type;
+    public String getPassword() {
+        return password;
     }
 
     /**
-     * Sets the value of the type property.
+     * Sets the value of the password property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setType(String value) {
-        this.type = value;
+    public void setPassword(String value) {
+        this.password = value;
+    }
+
+    /**
+     * Gets the value of the username property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * Sets the value of the username property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setUsername(String value) {
+        this.username = value;
     }
 
 }

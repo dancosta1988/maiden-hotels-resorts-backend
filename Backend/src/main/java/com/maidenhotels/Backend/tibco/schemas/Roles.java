@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element ref="{http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Bookings.xsd}BookingGuest" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element ref="{http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Schema.xsd}Role" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,48 +38,48 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "bookingGuest"
+    "role"
 })
-@XmlRootElement(name = "BookingsGuests")
-public class BookingsGuests {
+@XmlRootElement(name = "Roles", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Schema.xsd")
+public class Roles {
 
-    @XmlElement(name = "BookingGuest")
-    protected List<BookingGuest> bookingGuest;
+    @XmlElement(name = "Role", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Schema.xsd")
+    protected List<Role> role;
 
-    public BookingsGuests() {
+    public Roles() {
     }
 
-    public BookingsGuests(List<BookingGuest> bookingGuest) {
-        this.bookingGuest = bookingGuest;
+    public Roles(List<Role> role) {
+        this.role = role;
     }
 
     /**
-     * Gets the value of the bookingGuest property.
+     * Gets the value of the role property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bookingGuest property.
+     * This is why there is not a <CODE>set</CODE> method for the role property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getBookingGuest().add(newItem);
+     *    getRole().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link BookingGuest }
+     * {@link Role }
      * 
      * 
      */
-    public List<BookingGuest> getBookingGuest() {
-        if (bookingGuest == null) {
-            bookingGuest = new ArrayList<BookingGuest>();
+    public List<Role> getRole() {
+        if (role == null) {
+            role = new ArrayList<Role>();
         }
-        return this.bookingGuest;
+        return this.role;
     }
 
 }

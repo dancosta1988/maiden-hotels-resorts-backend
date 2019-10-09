@@ -118,17 +118,81 @@
         </wsdl:port>
     </wsdl:service>
     <wsdl:portType name="PortTyp_Bookings">
+        <wsdl:operation name="Delete">
+            <wsdl:input message="tns:in_Delete"/>
+            <wsdl:output message="tns:out_Delete"/>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateGuests">
+            <wsdl:input message="tns:in_Update_BookingGuests"/>
+            <wsdl:output message="tns:out_Update_BookingGuests"/>
+        </wsdl:operation>
+        <wsdl:operation name="Insert">
+            <wsdl:input message="tns:in_Insert"/>
+            <wsdl:output message="tns:out_Insert"/>
+        </wsdl:operation>
+        <wsdl:operation name="Update">
+            <wsdl:input message="tns:in_Update_Booking"/>
+            <wsdl:output message="tns:out_Update_Booking"/>
+        </wsdl:operation>
         <wsdl:operation name="Get_ByRoom">
             <wsdl:input message="tns:in_Get_ByRoom"/>
             <wsdl:output message="tns:out_Get_ByRoom"/>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateRooms">
+            <wsdl:input message="tns:in_Update_BookingRoomsHotel"/>
+            <wsdl:output message="tns:out_Update_BookingRoomsHotel"/>
         </wsdl:operation>
         <wsdl:operation name="Get_ByID">
             <wsdl:input message="tns:in_Get_ByID"/>
             <wsdl:output message="tns:out_Get_ByID"/>
         </wsdl:operation>
+        <wsdl:operation name="UpdateServices">
+            <wsdl:input message="tns:in_Update_BookingServices"/>
+            <wsdl:output message="tns:out_Update_BookingServices"/>
+        </wsdl:operation>
+        <wsdl:operation name="InsertServices">
+            <wsdl:input message="tns:in_Insert_BookingService"/>
+            <wsdl:output message="tns:out_Insert_BookingService"/>
+        </wsdl:operation>
     </wsdl:portType>
     <wsdl:binding name="PortTyp_BookingsBinding" type="tns:PortTyp_Bookings">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Delete">
+            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//Delete"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="Booking"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="Status"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateGuests">
+            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//UpdateGuests"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="BookingGuests"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="Status"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Insert">
+            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//Insert"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="Bookings"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="Status"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Update">
+            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//Update"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="Booking"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="Status"/>
+            </wsdl:output>
+        </wsdl:operation>
         <wsdl:operation name="Get_ByRoom">
             <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//Get_ByRoom"/>
             <wsdl:input>
@@ -136,6 +200,15 @@
             </wsdl:input>
             <wsdl:output>
                 <soap:body use="literal" parts="Bookings"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateRooms">
+            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//UpdateRooms"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="RoomsHotel"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="Status"/>
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="Get_ByID">
@@ -147,17 +220,77 @@
                 <soap:body use="literal" parts="Bookings"/>
             </wsdl:output>
         </wsdl:operation>
+        <wsdl:operation name="UpdateServices">
+            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//UpdateServices"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="BookingServices"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="Status"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="InsertServices">
+            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//InsertServices"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="BookingService"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="Status"/>
+            </wsdl:output>
+        </wsdl:operation>
     </wsdl:binding>
+    <wsdl:message name="in_Delete">
+        <wsdl:part name="Booking" element="ns0:Bookings"/>
+    </wsdl:message>
+    <wsdl:message name="out_Delete">
+        <wsdl:part name="Status" element="ns0:StatusBooking"/>
+    </wsdl:message>
+    <wsdl:message name="in_Update_BookingGuests">
+        <wsdl:part name="BookingGuests" element="ns0:BookingsGuests"/>
+    </wsdl:message>
+    <wsdl:message name="out_Update_BookingGuests">
+        <wsdl:part name="Status" element="ns0:StatusBooking"/>
+    </wsdl:message>
+    <wsdl:message name="in_Insert">
+        <wsdl:part name="Bookings" element="ns0:Bookings"/>
+    </wsdl:message>
+    <wsdl:message name="out_Insert">
+        <wsdl:part name="Status" element="ns0:StatusBooking"/>
+    </wsdl:message>
+    <wsdl:message name="in_Update_Booking">
+        <wsdl:part name="Booking" element="ns0:Bookings"/>
+    </wsdl:message>
+    <wsdl:message name="out_Update_Booking">
+        <wsdl:part name="Status" element="ns0:StatusBooking"/>
+    </wsdl:message>
     <wsdl:message name="in_Get_ByRoom">
         <wsdl:part name="Bookings" element="ns0:Bookings"/>
     </wsdl:message>
     <wsdl:message name="out_Get_ByRoom">
         <wsdl:part name="Bookings" element="ns0:Bookings"/>
     </wsdl:message>
+    <wsdl:message name="in_Update_BookingRoomsHotel">
+        <wsdl:part name="RoomsHotel" element="ns0:BookingsRoomsHotels"/>
+    </wsdl:message>
+    <wsdl:message name="out_Update_BookingRoomsHotel">
+        <wsdl:part name="Status" element="ns0:StatusBooking"/>
+    </wsdl:message>
     <wsdl:message name="in_Get_ByID">
         <wsdl:part name="Bookings" element="ns0:Bookings"/>
     </wsdl:message>
     <wsdl:message name="out_Get_ByID">
         <wsdl:part name="Bookings" element="ns0:Bookings"/>
+    </wsdl:message>
+    <wsdl:message name="in_Update_BookingServices">
+        <wsdl:part name="BookingServices" element="ns0:BookingsServices"/>
+    </wsdl:message>
+    <wsdl:message name="out_Update_BookingServices">
+        <wsdl:part name="Status" element="ns0:StatusBooking"/>
+    </wsdl:message>
+    <wsdl:message name="in_Insert_BookingService">
+        <wsdl:part name="BookingService" element="ns0:BookingsServices"/>
+    </wsdl:message>
+    <wsdl:message name="out_Insert_BookingService">
+        <wsdl:part name="Status" element="ns0:StatusBooking"/>
     </wsdl:message>
 </wsdl:definitions>
