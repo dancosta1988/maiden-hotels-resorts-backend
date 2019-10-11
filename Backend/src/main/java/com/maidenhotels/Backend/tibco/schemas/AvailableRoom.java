@@ -24,10 +24,10 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="cost" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="id_hotel" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="id_service" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="id_rooms" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -37,50 +37,26 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "BkServices")
-public class BkServices {
+@XmlRootElement(name = "AvailableRoom")
+public class AvailableRoom {
 
-    @XmlAttribute(name = "cost")
-    protected String cost;
     @XmlAttribute(name = "id")
     protected String id;
     @XmlAttribute(name = "id_hotel")
     protected String idHotel;
-    @XmlAttribute(name = "id_service")
-    protected String idService;
+    @XmlAttribute(name = "id_rooms")
+    protected String idRooms;
+    @XmlAttribute(name = "type")
+    protected String type;
 
-    public BkServices() {
+    public AvailableRoom() {
     }
 
-    public BkServices(String cost, String id, String idHotel, String idService) {
-        this.cost = cost;
+    public AvailableRoom(String id, String idHotel, String idRooms, String type) {
         this.id = id;
         this.idHotel = idHotel;
-        this.idService = idService;
-    }
-
-    /**
-     * Gets the value of the cost property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCost() {
-        return cost;
-    }
-
-    /**
-     * Sets the value of the cost property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCost(String value) {
-        this.cost = value;
+        this.idRooms = idRooms;
+        this.type = type;
     }
 
     /**
@@ -132,27 +108,51 @@ public class BkServices {
     }
 
     /**
-     * Gets the value of the idService property.
+     * Gets the value of the idRooms property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getIdService() {
-        return idService;
+    public String getIdRooms() {
+        return idRooms;
     }
 
     /**
-     * Sets the value of the idService property.
+     * Sets the value of the idRooms property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setIdService(String value) {
-        this.idService = value;
+    public void setIdRooms(String value) {
+        this.idRooms = value;
+    }
+
+    /**
+     * Gets the value of the type property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * Sets the value of the type property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setType(String value) {
+        this.type = value;
     }
 
 }

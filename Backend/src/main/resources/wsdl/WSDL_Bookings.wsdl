@@ -3,6 +3,21 @@
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.example.com/1569428824507" xmlns:ns0="http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Bookings.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Untitled" targetNamespace="http://xmlns.example.com/1569428824507">
     <wsdl:types>
         <xs:schema xmlns="http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Bookings.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Bookings.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="AvailableRoom">
+                <xs:complexType>
+                    <xs:attribute name="id" type="xs:string"/>
+                    <xs:attribute name="id_hotel" type="xs:string"/>
+                    <xs:attribute name="id_rooms" type="xs:string"/>
+                    <xs:attribute name="type" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="AvailableRooms">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:AvailableRoom" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="BkGuests">
                 <xs:complexType>
                     <xs:attribute name="address" type="xs:string"/>
@@ -122,9 +137,17 @@
             <wsdl:input message="tns:in_Delete"/>
             <wsdl:output message="tns:out_Delete"/>
         </wsdl:operation>
+        <wsdl:operation name="Get_AvailableRooms">
+            <wsdl:input message="tns:in_GetAvailableRooms"/>
+            <wsdl:output message="tns:out_GetAvailableRooms"/>
+        </wsdl:operation>
         <wsdl:operation name="UpdateGuests">
             <wsdl:input message="tns:in_Update_BookingGuests"/>
             <wsdl:output message="tns:out_Update_BookingGuests"/>
+        </wsdl:operation>
+        <wsdl:operation name="Get_All">
+            <wsdl:input message="tns:in_Get_All"/>
+            <wsdl:output message="tns:out_Get_All"/>
         </wsdl:operation>
         <wsdl:operation name="Insert">
             <wsdl:input message="tns:in_Insert"/>
@@ -166,6 +189,15 @@
                 <soap:body use="literal" parts="Status"/>
             </wsdl:output>
         </wsdl:operation>
+        <wsdl:operation name="Get_AvailableRooms">
+            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//Get_AvailableRooms"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="Bookings"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="AvailableRooms"/>
+            </wsdl:output>
+        </wsdl:operation>
         <wsdl:operation name="UpdateGuests">
             <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//UpdateGuests"/>
             <wsdl:input>
@@ -173,6 +205,15 @@
             </wsdl:input>
             <wsdl:output>
                 <soap:body use="literal" parts="Status"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Get_All">
+            <soap:operation style="document" soapAction="/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//Get_All"/>
+            <wsdl:input>
+                <soap:body use="literal" parts=""/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="Bookings"/>
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="Insert">
@@ -245,11 +286,21 @@
     <wsdl:message name="out_Delete">
         <wsdl:part name="Status" element="ns0:StatusBooking"/>
     </wsdl:message>
+    <wsdl:message name="in_GetAvailableRooms">
+        <wsdl:part name="Bookings" element="ns0:Bookings"/>
+    </wsdl:message>
+    <wsdl:message name="out_GetAvailableRooms">
+        <wsdl:part name="AvailableRooms" element="ns0:AvailableRooms"/>
+    </wsdl:message>
     <wsdl:message name="in_Update_BookingGuests">
         <wsdl:part name="BookingGuests" element="ns0:BookingsGuests"/>
     </wsdl:message>
     <wsdl:message name="out_Update_BookingGuests">
         <wsdl:part name="Status" element="ns0:StatusBooking"/>
+    </wsdl:message>
+    <wsdl:message name="in_Get_All"/>
+    <wsdl:message name="out_Get_All">
+        <wsdl:part name="Bookings" element="ns0:Bookings"/>
     </wsdl:message>
     <wsdl:message name="in_Insert">
         <wsdl:part name="Bookings" element="ns0:Bookings"/>

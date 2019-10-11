@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element ref="{http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/RoomsHotel.xsd}roomsHotel" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element ref="{http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/Bookings.xsd}AvailableRoom" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,48 +38,48 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "roomsHotel"
+    "availableRoom"
 })
-@XmlRootElement(name = "roomsHotels", namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/RoomsHotel.xsd")
-public class RoomsHotels {
+@XmlRootElement(name = "AvailableRooms")
+public class AvailableRooms {
 
-    @XmlElement(namespace = "http://www.tibco.com/schemas/TIBCO/Maiden_Hotels_Project/Schemas/RoomsHotel.xsd")
-    protected List<RoomsHotel> roomsHotel;
+    @XmlElement(name = "AvailableRoom")
+    protected List<AvailableRoom> availableRoom;
 
-    public RoomsHotels() {
+    public AvailableRooms() {
     }
 
-    public RoomsHotels(List<RoomsHotel> roomsHotel) {
-        this.roomsHotel = roomsHotel;
+    public AvailableRooms(List<AvailableRoom> availableRoom) {
+        this.availableRoom = availableRoom;
     }
 
     /**
-     * Gets the value of the roomsHotel property.
+     * Gets the value of the availableRoom property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the roomsHotel property.
+     * This is why there is not a <CODE>set</CODE> method for the availableRoom property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRoomsHotel().add(newItem);
+     *    getAvailableRoom().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link RoomsHotel }
+     * {@link AvailableRoom }
      * 
      * 
      */
-    public List<RoomsHotel> getRoomsHotel() {
-        if (roomsHotel == null) {
-            roomsHotel = new ArrayList<RoomsHotel>();
+    public List<AvailableRoom> getAvailableRoom() {
+        if (availableRoom == null) {
+            availableRoom = new ArrayList<AvailableRoom>();
         }
-        return this.roomsHotel;
+        return this.availableRoom;
     }
 
 }
