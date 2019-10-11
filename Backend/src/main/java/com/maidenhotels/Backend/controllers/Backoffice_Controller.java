@@ -1,6 +1,7 @@
 package com.maidenhotels.Backend.controllers;
 
 import com.maidenhotels.Backend.controllers.factory.RequestCreator;
+import com.maidenhotels.Backend.security.SecurityEncoder;
 import com.maidenhotels.Backend.services.Backoffices_services;
 import com.maidenhotels.Backend.tibco.schemas.Backoffice;
 import com.maidenhotels.Backend.tibco.schemas.Backoffices;
@@ -19,7 +20,7 @@ public class Backoffice_Controller {
     //Creates objects with less and repeatable cod
     // Example: To create Backoffices: we need to create Backoffice, set the attributes, instantiate Backoffices and then add Backoffice to Backoffices
     @Autowired
-    private RequestCreator factory;
+    private SecurityEncoder se;
 
 
     @GetMapping
@@ -40,6 +41,7 @@ public class Backoffice_Controller {
     public String createBackoffice(@RequestBody Backoffice request ) {
 
         Backoffices backofficesReq = new Backoffices();
+        request.setPassword(se.passwordEncoder().encode(request.getPassword()));
         backofficesReq.getBackoffice().add(request);
         return backoffices.create(backofficesReq);
     }
@@ -56,6 +58,7 @@ public class Backoffice_Controller {
     public String UpdateBackoffice(@RequestBody Backoffice request ) {
 
         Backoffices backofficesReq = new Backoffices();
+        request.setPassword(se.passwordEncoder().encode(request.getPassword()));
         backofficesReq.getBackoffice().add(request);
         return backoffices.update(backofficesReq);
     }

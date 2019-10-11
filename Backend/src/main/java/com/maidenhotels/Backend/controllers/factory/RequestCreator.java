@@ -51,9 +51,10 @@ public class RequestCreator {
         request.getRoomsHotel().add(roomsHotel);
         return request;
     }
-    public RoomsHotels createRoomsHotelID(String idHotel) {
+    public RoomsHotels createRoomsHotelID(String id, String idHotel) {
 
         RoomsHotel roomsHotel = new RoomsHotel();
+        roomsHotel.setId(id);
         roomsHotel.setIdHotel(idHotel);
         RoomsHotels request = new RoomsHotels();
         request.getRoomsHotel().add(roomsHotel);

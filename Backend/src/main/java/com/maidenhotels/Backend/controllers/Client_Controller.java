@@ -1,6 +1,7 @@
 package com.maidenhotels.Backend.controllers;
 
 import com.maidenhotels.Backend.controllers.factory.RequestCreator;
+import com.maidenhotels.Backend.security.SecurityEncoder;
 import com.maidenhotels.Backend.services.Clients_services;
 import com.maidenhotels.Backend.tibco.schemas.Client;
 import com.maidenhotels.Backend.tibco.schemas.Clients;
@@ -19,7 +20,7 @@ public class Client_Controller {
     //Creates objects with less and repeatable cod
     // Example: To create Clients: we need to create Client, set the attributes, instantiate Clients and then add Client to Clients
     @Autowired
-    private RequestCreator factory;
+    private SecurityEncoder se;
 
 
     @GetMapping
@@ -40,6 +41,7 @@ public class Client_Controller {
     public String createClient(@RequestBody Client request ) {
 
         Clients clientsReq = new Clients();
+        request.setPassword(se.passwordEncoder().encode(request.getPassword()));
         clientsReq.getClient().add(request);
         return clients.create(clientsReq);
     }
@@ -56,6 +58,7 @@ public class Client_Controller {
     public String UpdateClient(@RequestBody Client request ) {
 
         Clients clientsReq = new Clients();
+        request.setPassword(se.passwordEncoder().encode(request.getPassword()));
         clientsReq.getClient().add(request);
         return clients.update(clientsReq);
     }
