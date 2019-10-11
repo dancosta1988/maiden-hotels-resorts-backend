@@ -88,4 +88,10 @@ public class Bookings_services implements Services_Interface<Bookings, Booking> 
         return dataOutput.getSuccessBooking().getValue();
     }
 
+    public List<Booking> getAvailableRooms(Bookings request) {
+
+        Bookings dataOutput = operations.getResult(uri,Scheme_SOAP_Services_Locations.BOOKING_SOAP_ACTION_READ_AVAILABLE_ROOMS,request);
+        return dataOutput.getBooking();
+    }
+
 }

@@ -7,11 +7,13 @@ import com.maidenhotels.Backend.tibco.schemas.Bookings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("Booking")
+@RequestMapping("Bookings")
 public class Booking_Controller {
 
     @Autowired
@@ -47,6 +49,13 @@ public class Booking_Controller {
     public String createBooking(@RequestBody Booking request ) {
 
         Bookings bookingReq = new Bookings();
+
+        //Checking the date of the booking
+        String pattern = "yyyy-MM-dd HH:mm:ss";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        String date = simpleDateFormat.format(new Date());
+        request.setDate(date);
+
         bookingReq.getBooking().add(request);
         return booking.create(bookingReq);
     }
@@ -97,5 +106,13 @@ public class Booking_Controller {
         Bookings bookingReq = new Bookings();
         bookingReq.getBooking().add(request);
         return booking.insertServices(bookingReq);
+    }
+
+    @PostMapping("BookingGetAvailableRooms")
+    public List<Booking> getAvailableRooms(@RequestBody Booking request ) {
+
+        Bookings bookingReq = new Bookings();
+        bookingReq.getBooking().add(request);
+        return booking.getAvailableRooms(bookingReq);
     }
 }
