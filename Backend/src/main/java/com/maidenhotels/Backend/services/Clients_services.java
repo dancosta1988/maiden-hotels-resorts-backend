@@ -34,6 +34,14 @@ public class Clients_services implements Services_Interface<Clients, Client> {
         return dataOutput.getClient();
     }
 
+    public List<Client> getByParamWithoutPassword(Clients request) {
+
+        Clients dataOutput = operations.getResult(uri,Scheme_SOAP_Services_Locations.CLIENT_SOAP_ACTION_READ_BY_PARAM,request);
+
+        dataOutput.getClient().get(0).setPassword("");
+        return dataOutput.getClient();
+    }
+
 
     @Override
     public String create(Clients request) {

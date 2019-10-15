@@ -34,7 +34,7 @@ public class Backoffice_Controller {
 
         Backoffices backofficesReq = new Backoffices();
         backofficesReq.getBackoffice().add(request);
-        return backoffices.getByParam(backofficesReq);
+        return backoffices.getByParamWithoutPassword(backofficesReq);
     }
 
     @PostMapping("BackofficeCreate")

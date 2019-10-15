@@ -34,7 +34,7 @@ public class Client_Controller {
 
         Clients clientsReq = new Clients();
         clientsReq.getClient().add(request);
-        return clients.getByParam(clientsReq);
+        return clients.getByParamWithoutPassword(clientsReq);
     }
 
     @PostMapping("ClientCreate")

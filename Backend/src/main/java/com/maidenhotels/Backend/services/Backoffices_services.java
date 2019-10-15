@@ -36,6 +36,14 @@ public class Backoffices_services implements Services_Interface<Backoffices, Bac
         return dataOutput.getBackoffice();
     }
 
+    public List<Backoffice> getByParamWithoutPassword(Backoffices request) {
+
+        Backoffices dataOutput = operations.getResult(uri,Scheme_SOAP_Services_Locations.BACKOFFICE_SOAP_ACTION_READ_BY_PARAM,request);
+
+        dataOutput.getBackoffice().get(0).setPassword("");
+        return dataOutput.getBackoffice();
+    }
+
     public List<Backoffice> getByID(Backoffices request) {
         return null;
     }
