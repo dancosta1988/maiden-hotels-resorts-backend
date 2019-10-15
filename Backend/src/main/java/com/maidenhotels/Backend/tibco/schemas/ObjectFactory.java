@@ -69,19 +69,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AvailableRoom }
+     * Create an instance of {@link OccupiedRoom }
      * 
      */
-    public AvailableRoom createAvailableRoom() {
-        return new AvailableRoom();
+    public OccupiedRoom createAvailableRoom() {
+        return new OccupiedRoom();
     }
 
     /**
-     * Create an instance of {@link AvailableRooms }
+     * Create an instance of {@link OccupiedRooms }
      * 
      */
-    public AvailableRooms createAvailableRooms() {
-        return new AvailableRooms();
+    public OccupiedRooms createAvailableRooms() {
+        return new OccupiedRooms();
     }
 
     /**

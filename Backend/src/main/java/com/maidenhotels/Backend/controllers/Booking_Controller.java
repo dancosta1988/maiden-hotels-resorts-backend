@@ -2,6 +2,7 @@ package com.maidenhotels.Backend.controllers;
 
 import com.maidenhotels.Backend.controllers.factory.RequestCreator;
 import com.maidenhotels.Backend.services.Bookings_services;
+import com.maidenhotels.Backend.tibco.schemas.OccupiedRoom;
 import com.maidenhotels.Backend.tibco.schemas.Booking;
 import com.maidenhotels.Backend.tibco.schemas.Bookings;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin
 @RestController
@@ -60,6 +62,21 @@ public class Booking_Controller {
         return booking.create(bookingReq);
     }
 
+    @PostMapping("BookingCreateWithBill")
+    public Map<String, Object> createBookingWithBill(@RequestBody Booking request ) {
+
+        Bookings bookingReq = new Bookings();
+
+        //Checking the date of the booking
+        String pattern = "yyyy-MM-dd HH:mm:ss";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        String date = simpleDateFormat.format(new Date());
+        request.setDate(date);
+
+        bookingReq.getBooking().add(request);
+        return booking.createWithBill(bookingReq);
+    }
+
     @PostMapping("BookingDelete")
     public String deleteBooking(@RequestBody Booking request ) {
 
@@ -108,11 +125,11 @@ public class Booking_Controller {
         return booking.insertServices(bookingReq);
     }
 
-    @PostMapping("BookingGetAvailableRooms")
-    public List<Booking> getAvailableRooms(@RequestBody Booking request ) {
+    @PostMapping("BookingGetOccupiedRooms")
+    public List<OccupiedRoom> getOccupiedRooms(@RequestBody Booking request ) {
 
         Bookings bookingReq = new Bookings();
         bookingReq.getBooking().add(request);
-        return booking.getAvailableRooms(bookingReq);
+        return booking.getOccupiedRooms(bookingReq);
     }
 }
