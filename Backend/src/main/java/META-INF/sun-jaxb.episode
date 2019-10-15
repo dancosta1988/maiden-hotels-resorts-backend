@@ -54,13 +54,13 @@ Generated on: 2019.10.11 at 09:29:45 AM BST
             
         <bindings if-exists="true" scd="tns:AvailableRoom">
                   
-            <class ref="com.maidenhotels.Backend.tibco.schemas.AvailableRoom"/>
+            <class ref="com.maidenhotels.Backend.tibco.schemas.OccupiedRoom"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="tns:AvailableRooms">
                   
-            <class ref="com.maidenhotels.Backend.tibco.schemas.AvailableRooms"/>
+            <class ref="com.maidenhotels.Backend.tibco.schemas.OccupiedRooms"/>
                 
         </bindings>
             

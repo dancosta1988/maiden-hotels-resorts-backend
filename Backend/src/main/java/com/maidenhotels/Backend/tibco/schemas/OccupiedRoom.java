@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "AvailableRoom")
-public class AvailableRoom {
+@XmlRootElement(name = "OccupiedRoom")
+public class OccupiedRoom {
 
     @XmlAttribute(name = "id")
     protected String id;
@@ -49,10 +49,10 @@ public class AvailableRoom {
     @XmlAttribute(name = "type")
     protected String type;
 
-    public AvailableRoom() {
+    public OccupiedRoom() {
     }
 
-    public AvailableRoom(String id, String idHotel, String idRooms, String type) {
+    public OccupiedRoom(String id, String idHotel, String idRooms, String type) {
         this.id = id;
         this.idHotel = idHotel;
         this.idRooms = idRooms;

@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "availableRoom"
+    "occupiedRoom"
 })
-@XmlRootElement(name = "AvailableRooms")
-public class AvailableRooms {
+@XmlRootElement(name = "OccupiedRooms")
+public class OccupiedRooms {
 
-    @XmlElement(name = "AvailableRoom")
-    protected List<AvailableRoom> availableRoom;
+    @XmlElement(name = "OccupiedRoom")
+    protected List<OccupiedRoom> occupiedRoom;
 
-    public AvailableRooms() {
+    public OccupiedRooms() {
     }
 
-    public AvailableRooms(List<AvailableRoom> availableRoom) {
-        this.availableRoom = availableRoom;
+    public OccupiedRooms(List<OccupiedRoom> occupiedRoom) {
+        this.occupiedRoom = occupiedRoom;
     }
 
     /**
@@ -71,15 +71,15 @@ public class AvailableRooms {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AvailableRoom }
+     * {@link OccupiedRoom }
      * 
      * 
      */
-    public List<AvailableRoom> getAvailableRoom() {
-        if (availableRoom == null) {
-            availableRoom = new ArrayList<AvailableRoom>();
+    public List<OccupiedRoom> getOccupiedRoom() {
+        if (occupiedRoom == null) {
+            occupiedRoom = new ArrayList<OccupiedRoom>();
         }
-        return this.availableRoom;
+        return this.occupiedRoom;
     }
 
 }
