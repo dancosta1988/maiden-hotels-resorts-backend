@@ -104,23 +104,23 @@ public class Scheme_SOAP_Services_Locations {
     public static final String BOOKING_SOAP_ACTION_INSERT_SERVICES = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//InsertServices";
     public static final String BOOKING_SOAP_ACTION_UPDATE_ROOMS = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//UpdateRooms";
     public static final String BOOKING_SOAP_ACTION_UPDATE_GUESTS = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//UpdateGuests";
-    public static final String BOOKING_SOAP_ACTION_READ_AVAILABLE_ROOMS = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//Get_AvailableRooms";
+    public static final String BOOKING_SOAP_ACTION_READ_OCCUPIED_ROOMS = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//Get_OccupiedRooms";
     //--END: BOOKING - SOAP ACTIONS--
 
     //-- ROLES - SOAP ACTIONS--
-    public static final String ROLE_SOAP_ACTION_CREATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Roles.serviceagent/Insert";
-    public static final String ROLE_SOAP_ACTION_UPDATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Roles.serviceagent/Update";
-    public static final String ROLE_SOAP_ACTION_DELETE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Roles.serviceagent/Delete";
-    public static final String ROLE_SOAP_ACTION_READ_ALL = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Roles.serviceagent/Get_All";
-    public static final String ROLE_SOAP_ACTION_READ_BY_PARAM = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Roles.serviceagent/Get_ByParam";
+    public static final String ROLE_SOAP_ACTION_CREATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Roles.serviceagent/PortType_RolesEndpoint1/Insert";
+    public static final String ROLE_SOAP_ACTION_UPDATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Roles.serviceagent/PortType_RolesEndpoint1/Update";
+    public static final String ROLE_SOAP_ACTION_DELETE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Roles.serviceagent/PortType_RolesEndpoint1/Delete";
+    public static final String ROLE_SOAP_ACTION_READ_ALL = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Roles.serviceagent/PortType_RolesEndpoint1/Get_All";
+    public static final String ROLE_SOAP_ACTION_READ_BY_PARAM = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Roles.serviceagent/PortType_RolesEndpoint1/Get_ByParam";
     //--END: ROLES - SOAP ACTIONS--
 
     //-- BACKOFFICE - SOAP ACTIONS--
-    public static final String BACKOFFICE_SOAP_ACTION_CREATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Backoffices.serviceagent/Insert";
-    public static final String BACKOFFICE_SOAP_ACTION_UPDATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Backoffices.serviceagent/Update";
-    public static final String BACKOFFICE_SOAP_ACTION_DELETE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Backoffices.serviceagent/Delete";
-    public static final String BACKOFFICE_SOAP_ACTION_READ_ALL = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Backoffices.serviceagent/Get_All";
-    public static final String BACKOFFICE_SOAP_ACTION_READ_BY_PARAM = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Backoffices.serviceagent/Get_ByParam";
+    public static final String BACKOFFICE_SOAP_ACTION_CREATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Backoffices.serviceagent/PortType_Backoffice/Insert";
+    public static final String BACKOFFICE_SOAP_ACTION_UPDATE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Backoffices.serviceagent/PortType_Backoffice/Update";
+    public static final String BACKOFFICE_SOAP_ACTION_DELETE = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Backoffices.serviceagent/PortType_Backoffice/Delete";
+    public static final String BACKOFFICE_SOAP_ACTION_READ_ALL = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Backoffices.serviceagent/PortType_Backoffice/Get_All";
+    public static final String BACKOFFICE_SOAP_ACTION_READ_BY_PARAM = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Backoffices.serviceagent/PortType_Backoffice/Get_ByParam";
     //--END: BACKOFFICE - SOAP ACTIONS--
 
 
