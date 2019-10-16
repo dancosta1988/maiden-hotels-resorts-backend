@@ -32,9 +32,9 @@ public class Authentication_Configuration extends WebSecurityConfigurerAdapter {
    @Autowired
    private UsersDetails_services usersDetails_services;
 
-   private static final String ADMIN = "2"; //Administrator
-   private static final String CLIENT_MANAGER = "7"; // Client_Manager
-   private static final String MANAGER_OPERATOR = "1"; // Manager_Operator
+   private static final String ADMIN = "1"; //Administrator
+   private static final String OPERATOR = "3"; //Operator
+   private static final String MANAGER = "2"; //Manager
 
     @Bean
     public CorsFilter corsFilter() {
@@ -71,49 +71,52 @@ public class Authentication_Configuration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // configure access rules
                 .antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
-                .antMatchers("/**").permitAll()
+                //.antMatchers("/**").permitAll()
                 .antMatchers("/login").permitAll()
                                                     // --BACKOFFICE-- //
-                .antMatchers("/Backoffices/BackofficeByParam", "/Backoffices/BackofficeUpdate").hasAnyRole(MANAGER_OPERATOR, CLIENT_MANAGER)
+                .antMatchers("/Backoffices/BackofficeByParam", "/Backoffices/BackofficeUpdate").hasAnyRole(MANAGER, OPERATOR, ADMIN)
                 .antMatchers("/Backoffices/**").hasRole(ADMIN)
                                                     // --ROLES-- //
-                .antMatchers("/Roles/RolesDelete","/Roles/RolesCreate","/Roles/RolesUpdate").hasRole(ADMIN)
-                .antMatchers("/Roles/**").authenticated()
+                .antMatchers("/Roles/RoleDelete","/Roles/RoleCreate","/Roles/RoleUpdate").hasRole(ADMIN)
+                .antMatchers("/Roles/**").hasAnyRole(MANAGER, OPERATOR, ADMIN)
                                                     // --HOTELS-- //
                 .antMatchers("/Hotels/HotelDelete" ).hasRole(ADMIN)
                 .antMatchers("/Hotels","/Hotels/HotelByParam").permitAll()
-                .antMatchers("/Hotels/**" ).hasAnyRole(MANAGER_OPERATOR,ADMIN)
+                .antMatchers("/Hotels/**" ).hasAnyRole(MANAGER,ADMIN)
                                                      // --ROOMS-- //
                 .antMatchers("/Rooms/RoomDelete" ).hasRole(ADMIN)
                 .antMatchers("/Rooms","/Rooms/RoomByParam").permitAll()
-                .antMatchers("/Rooms/**" ).hasAnyRole(MANAGER_OPERATOR,ADMIN)
+                .antMatchers("/Rooms/**" ).hasAnyRole(MANAGER,ADMIN)
                                                     // --SERVICES-- //
                 .antMatchers("/Services/ServiceDelete" ).hasRole(ADMIN)
                 .antMatchers("/Services","/Services/ServiceByParam").permitAll()
-                .antMatchers("/Services/**" ).hasAnyRole(MANAGER_OPERATOR,ADMIN)
+                .antMatchers("/Services/**" ).hasAnyRole(MANAGER,ADMIN)
                                                     // --HOTELS-SERVICES-- //
                 .antMatchers("/ServicesHotel/ServicesHotelDelete" ).hasRole(ADMIN)
+                .antMatchers("/ServicesHotel/ServicesHotelUpdate", "/ServicesHotel/ServicesHotelCreate" ).hasAnyRole(MANAGER, ADMIN)
                 .antMatchers("/ServicesHotel","/ServicesHotel/ServicesHotelByParam").permitAll()
-                .antMatchers("/ServicesHotel/**" ).hasAnyRole(MANAGER_OPERATOR,ADMIN)
+                .antMatchers("/ServicesHotel/**" ).hasAnyRole(MANAGER,ADMIN)
                                                     // --HOTELS-ROOMS-- //
                 .antMatchers("/RoomsHotel/RoomsHotelDelete" ).hasRole(ADMIN)
-                .antMatchers("/RoomsHotel","/RoomsHotelRoomsHotelByParam").permitAll()
-                .antMatchers("/RoomsHotel/**" ).hasAnyRole(MANAGER_OPERATOR,ADMIN)
+                .antMatchers("/RoomsHotel/RoomsHotelUpdate", "/RoomsHotel/RoomsHotelCreate" ).hasAnyRole(MANAGER, ADMIN)
+                .antMatchers("/RoomsHotel","/RoomsHotel/RoomsHotelByParam").permitAll()
+                .antMatchers("/RoomsHotel/**" ).hasAnyRole(MANAGER,ADMIN)
                                                     // --CLIENT-- //
                 .antMatchers("/Clients/ClientDelete" ).hasRole(ADMIN)
                 .antMatchers("/Clients/ClientCreate").permitAll()
                 .antMatchers("/Clients/ClientByParam", "/Clients/ClientUpdate").hasAnyRole("CLIENT",ADMIN)
-                .antMatchers("/Clients/**" ).hasAnyRole(CLIENT_MANAGER,ADMIN)
+                .antMatchers("/Clients/**" ).hasAnyRole(MANAGER, ADMIN)
                                                     // --GUEST-- //
                 .antMatchers("/Guests/GuestDelete" ).hasRole(ADMIN)
                 .antMatchers("/Guests/GuestCreate").permitAll()
-                .antMatchers("/Guests/GuestByParam", "/Guests/GuestUpdate").hasAnyRole("CLIENT",ADMIN)
-                .antMatchers("/Guests/**" ).hasAnyRole(CLIENT_MANAGER,ADMIN)
+                .antMatchers("/Guests/GuestByParam", "/Guests/GuestUpdate").hasAnyRole("CLIENT",OPERATOR, MANAGER, ADMIN)
+                .antMatchers("/Guests/**" ).hasAnyRole(MANAGER,ADMIN)
 
                                                     // --BOOKINGS-- //
-                .antMatchers("/Bookings/BookingDelete" ).hasAnyRole(ADMIN,CLIENT_MANAGER)
-                .antMatchers("/Bookings" ).hasAnyRole(CLIENT_MANAGER,ADMIN)
-                .antMatchers("/Bookings/**" ).hasAnyRole(ADMIN,CLIENT_MANAGER,"CLIENT")
+                .antMatchers("/Bookings/BookingDelete" ).hasAnyRole(ADMIN,MANAGER)
+                .antMatchers("/Bookings" ).hasAnyRole(MANAGER,ADMIN)
+                //.antMatchers("/Bookings/**" ).hasAnyRole(ADMIN,OPERATOR,"CLIENT")
+                .antMatchers("/Bookings/**" ).permitAll()
                 .anyRequest().authenticated();
     }
 
