@@ -102,6 +102,7 @@ public class Scheme_SOAP_Services_Locations {
     public static final String BOOKING_SOAP_ACTION_READ_BY_PARAM = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//Get_ByID";
     public static final String BOOKING_SOAP_ACTION_UPDATE_SERVICES = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//UpdateServices";
     public static final String BOOKING_SOAP_ACTION_INSERT_SERVICES = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//InsertServices";
+    public static final String BOOKING_SOAP_ACTION_DELETE_SERVICES = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//DeleteServices";
     public static final String BOOKING_SOAP_ACTION_UPDATE_ROOMS = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//UpdateRooms";
     public static final String BOOKING_SOAP_ACTION_UPDATE_GUESTS = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//UpdateGuests";
     public static final String BOOKING_SOAP_ACTION_READ_OCCUPIED_ROOMS = "/Maiden_Hotels_Project/ServicesCRUD_SOAP/Service_Bookings.serviceagent//Get_OccupiedRooms";

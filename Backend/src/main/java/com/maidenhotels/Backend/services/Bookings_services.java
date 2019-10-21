@@ -20,6 +20,9 @@ public class Bookings_services implements Services_Interface<Bookings, Booking> 
     private ServicesModel<Bookings, StatusBooking> operations;
 
     @Autowired
+    private ServicesModel<BookingsServices, StatusBooking> operationsServices;
+
+    @Autowired
     private ServicesModel<Bookings, OccupiedRooms> operationsRooms;
 
     @Autowired
@@ -172,9 +175,9 @@ public class Bookings_services implements Services_Interface<Bookings, Booking> 
     }
 
 
-    public String updateServices(Bookings request) {
+    public String updateServices(BookingsServices request) {
 
-        StatusBooking dataOutput = operations.getStatus(uri, Scheme_SOAP_Services_Locations.BOOKING_SOAP_ACTION_UPDATE_SERVICES, request);
+        StatusBooking dataOutput = operationsServices.getStatus(uri, Scheme_SOAP_Services_Locations.BOOKING_SOAP_ACTION_UPDATE_SERVICES, request);
         return dataOutput.getSuccessBooking().getValue();
     }
 
@@ -190,9 +193,15 @@ public class Bookings_services implements Services_Interface<Bookings, Booking> 
         return dataOutput.getSuccessBooking().getValue();
     }
 
-    public String insertServices(Bookings request) {
+    public String insertServices(BookingsServices request) {
 
-        StatusBooking dataOutput = operations.getStatus(uri, Scheme_SOAP_Services_Locations.BOOKING_SOAP_ACTION_INSERT_SERVICES, request);
+        StatusBooking dataOutput = operationsServices.getStatus(uri, Scheme_SOAP_Services_Locations.BOOKING_SOAP_ACTION_INSERT_SERVICES, request);
+        return dataOutput.getSuccessBooking().getValue();
+    }
+
+    public String deleteServices(BookingsServices request) {
+
+        StatusBooking dataOutput = operationsServices.getStatus(uri, Scheme_SOAP_Services_Locations.BOOKING_SOAP_ACTION_DELETE_SERVICES, request);
         return dataOutput.getSuccessBooking().getValue();
     }
 

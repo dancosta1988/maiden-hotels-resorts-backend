@@ -2,9 +2,7 @@ package com.maidenhotels.Backend.controllers;
 
 import com.maidenhotels.Backend.controllers.factory.RequestCreator;
 import com.maidenhotels.Backend.services.Bookings_services;
-import com.maidenhotels.Backend.tibco.schemas.OccupiedRoom;
-import com.maidenhotels.Backend.tibco.schemas.Booking;
-import com.maidenhotels.Backend.tibco.schemas.Bookings;
+import com.maidenhotels.Backend.tibco.schemas.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -94,10 +92,10 @@ public class Booking_Controller {
     }
 
     @PostMapping("BookingUpdateServices")
-    public String UpdateBookingServices(@RequestBody Booking request ) {
+    public String UpdateBookingServices(@RequestBody BookingsService request ) {
 
-        Bookings bookingReq = new Bookings();
-        bookingReq.getBooking().add(request);
+        BookingsServices bookingReq = new BookingsServices();
+        bookingReq.getBookingsService().add(request);
         return booking.updateServices(bookingReq);
     }
 
@@ -118,11 +116,19 @@ public class Booking_Controller {
     }
 
     @PostMapping("BookingInsertServices")
-    public String InsertBookingServices(@RequestBody Booking request ) {
+    public String InsertBookingServices(@RequestBody BookingsService request ) {
 
-        Bookings bookingReq = new Bookings();
-        bookingReq.getBooking().add(request);
+        BookingsServices bookingReq = new BookingsServices();
+        bookingReq.getBookingsService().add(request);
         return booking.insertServices(bookingReq);
+    }
+
+    @PostMapping("BookingDeleteServices")
+    public String DeleteBookingServices(@RequestBody BookingsService request ) {
+
+        BookingsServices bookingReq = new BookingsServices();
+        bookingReq.getBookingsService().add(request);
+        return booking.deleteServices(bookingReq);
     }
 
     @PostMapping("BookingGetOccupiedRooms")
