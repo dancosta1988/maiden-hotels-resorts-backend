@@ -109,11 +109,12 @@ public class Authentication_Configuration extends WebSecurityConfigurerAdapter {
                                                     // --GUEST-- //
                 .antMatchers("/Guests/GuestDelete" ).hasRole(ADMIN)
                 .antMatchers("/Guests/GuestCreate").permitAll()
-                .antMatchers("/Guests/GuestByParam", "/Guests/GuestUpdate").hasAnyRole("CLIENT",OPERATOR, MANAGER, ADMIN)
+                .antMatchers("/Guests/GuestByID", "/Guests/GuestUpdate").hasAnyRole("CLIENT",OPERATOR, MANAGER, ADMIN)
                 .antMatchers("/Guests/**" ).hasAnyRole(MANAGER,ADMIN)
 
                                                     // --BOOKINGS-- //
                 .antMatchers("/Bookings/BookingDelete" ).hasAnyRole(ADMIN,MANAGER)
+                .antMatchers("/Bookings/BookingInsertServices", "/Bookings/BookingDeleteServices" ).hasAnyRole(OPERATOR, ADMIN,MANAGER)
                 .antMatchers("/Bookings" ).hasAnyRole(MANAGER,ADMIN)
                 //.antMatchers("/Bookings/**" ).hasAnyRole(ADMIN,OPERATOR,"CLIENT")
                 .antMatchers("/Bookings/**" ).permitAll()
