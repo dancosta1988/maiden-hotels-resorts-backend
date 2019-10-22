@@ -104,7 +104,7 @@ public class Authentication_Configuration extends WebSecurityConfigurerAdapter {
                                                     // --CLIENT-- //
                 .antMatchers("/Clients/ClientDelete" ).hasRole(ADMIN)
                 .antMatchers("/Clients/ClientCreate").permitAll()
-                .antMatchers("/Clients/ClientByParam", "/Clients/ClientUpdate").hasAnyRole("CLIENT",ADMIN)
+                .antMatchers("/Clients/ClientByID", "/Clients/ClientUpdate").hasAnyRole("CLIENT",ADMIN)
                 .antMatchers("/Clients/**" ).hasAnyRole(MANAGER, ADMIN)
                                                     // --GUEST-- //
                 .antMatchers("/Guests/GuestDelete" ).hasRole(ADMIN)
@@ -114,8 +114,7 @@ public class Authentication_Configuration extends WebSecurityConfigurerAdapter {
 
                                                     // --BOOKINGS-- //
                 .antMatchers("/Bookings/BookingDelete" ).hasAnyRole(ADMIN,MANAGER)
-                .antMatchers("/Bookings/BookingInsertServices", "/Bookings/BookingDeleteServices" ).hasAnyRole(OPERATOR, ADMIN,MANAGER)
-                .antMatchers("/Bookings" ).hasAnyRole(MANAGER,ADMIN)
+                .antMatchers("/Bookings","/Bookings/BookingInsertServices", "/Bookings/BookingDeleteServices", "/Bookings/BookingUpdate" ).hasAnyRole(OPERATOR, ADMIN,MANAGER)
                 //.antMatchers("/Bookings/**" ).hasAnyRole(ADMIN,OPERATOR,"CLIENT")
                 .antMatchers("/Bookings/**" ).permitAll()
                 .anyRequest().authenticated();
